@@ -29,7 +29,7 @@ endforeach()
 
 add_definitions(-g3 -c -fmessage-length=0)
 
-set(EXT_LIBS m pthread)
+set(EXT_LIBS m pthread apr-1 aprutil-1)
 
 
 add_executable(${PROJECT_NAME} ${SRC})
