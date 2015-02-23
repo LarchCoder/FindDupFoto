@@ -175,13 +175,17 @@ int main(int argc, const char * const * argv, const char * const *env)
 
 	apr_app_initialize(&argc, &argv, &env);
 
+
+	//find_missing();
+
 	apr_pool_create(&p, NULL);
 
 	create_db(p);
 
 	find_file_in_dir(p,"/tmp/backup_data/test/");
 
-
+    //select * from slike s1, slike s2 where s1.id!=s2.id and s1.filename =s2.filename and s1.dir=s2.dir and s1.md5=s2.md5
+    //select * from slike s1, slike s2 where s1.id!=s2.id and s1.filename =s2.filename and s1.md5!=s2.md5 and s1.filename!="Thumbs.db" and s1.fulpath not like "%1not_my%" and s1.dir == s2.dir and s1.filename!="ZbThumbnail.info";
 
 
     apr_pool_destroy(p);
